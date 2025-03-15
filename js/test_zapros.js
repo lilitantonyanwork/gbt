@@ -601,7 +601,7 @@ btnGPT.addEventListener('click', () => {
   // blockGPT_text.style.display = 'none';
   btnGPT.classList.add('active');
   currentModel = 'chatbot';
-  document.querySelector("div.osn_block_chat").classList.add("start");
+  // document.querySelector("div.osn_block_chat").classList.add("start");
 
 });
 
@@ -615,7 +615,7 @@ btnSolveTask.addEventListener('click', () => {
   blockZadach_text.style.display = 'none';
   btnSolveTask.classList.add('active');
   currentModel = 'solve-task';
-  document.querySelector("div.osn_block_chat").classList.add("start");
+  // document.querySelector("div.osn_block_chat").classList.add("start");
 });
 
 // Написать сочинение
@@ -626,7 +626,7 @@ btnEssay.addEventListener('click', () => {
   blockSoch_text.style.display = 'none';
   btnEssay.classList.add('active');
   currentModel = 'generate-essay';
-  document.querySelector("div.osn_block_chat").classList.add("start");
+  // document.querySelector("div.osn_block_chat").classList.add("start");
 
 });
 
@@ -638,7 +638,7 @@ btnSummary.addEventListener('click', () => {
   blockKonsp_text.style.display = 'none';
   btnSummary.classList.add('active');
   currentModel = 'generate-summary';
-  document.querySelector("div.osn_block_chat").classList.add("start");
+  // document.querySelector("div.osn_block_chat").classList.add("start");
 
 });
 
@@ -683,6 +683,7 @@ typeWriter();
      document.querySelector("#btnEssay div").textContent = "Сочинение";
      document.querySelector("#btnSummary div").textContent = "Конспект";
      document.querySelector("#btnGPT div").textContent = "ChatGPT";
+     document.querySelector(".text_monitor").textContent = "Искусственный интеллект для обучения";
    } else {
      textarea1.placeholder = "Например: что такое законы Ньютона?";
      textarea2.placeholder = "Например: напиши рассказ про летние каникулы";
@@ -692,6 +693,7 @@ typeWriter();
      document.querySelector("#btnEssay div").textContent = "Написать сочинение";
      document.querySelector("#btnSummary div").textContent = "Написать конспект";
      document.querySelector("#btnGPT div").textContent = "Для любых вопросов";
+     document.querySelector(".text_monitor").textContent = "Искусственный интеллект для обучения: помощь в освоении знаний легко и увлекательно";
    }
  }
 
