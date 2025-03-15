@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наука GPT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- OwlCarousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+          <div class="header-content">
+            <!-- Логотип -->
+            <div class="logo">
+                <a href="https://nauka.club"><img src="img/logo.svg" alt="лого"></a>
+            </div>
+      
+            <!-- Бургер-иконка (скрывается на больших экранах) -->
+            <div class="hamburger" id="hamburger">
+                <!-- <img src="img/burger.svg" alt=""> -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </div>
+      
+            <!-- Основное меню -->
+            <nav class="nav-menu" id="nav-menu">
+              <div class="header-item">
+                <a href="#gpt_vozm">Возможности GPT</a>
+              </div>
+              <div class="header-item">
+                <a href="#gpt_vopros">Вопросы и ответы</a>
+              </div>
+              <div class="button-container">
+                <div class="button-text">
+                  <a href="https://nauka.club/">Онлайн учебник</a>
+                </div>
+                <div class="button-icon"></div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <section>
+        <div class="title_first_monitor">
+            <h1>Решаем <span>школьные</span> задачи</h1>
+              <h2>
+                вместе с ChatGPT
+            </h2>
+        </div>
+        <div class="text_monitor">
+            Искусственный интеллект для обучения: помощь в освоении знаний легко и увлекательно
+        </div>
+    </section>
+    <section>
+
+        <div class="chat_block">
+            <div id="GPT_CHAT" class="chat_block_center">
+<!--                <div class="chat_title">-->
+<!--                    <img src="img/nauka_title_chat.svg" alt="">-->
+<!--                    <a href="#gpt_vopros" class="tooltip">-->
+<!--                        <img class="question default" src="img/question.png" alt="Question">-->
+<!--                        <img class="question hover" src="img/question_.png" alt="Question">-->
+<!--                        <span class="tooltiptext">ПОДРОБНАЯ ИНСТРУКЦИЯ</span>-->
+<!--                      </a>-->
+<!--                      -->
+<!--                </div>-->
+                <!--
+                <div class="plashka">
+                    <div>Для старта напишите в чат сообщение с описанием своей задачи или вопросом. <span><a href="#gpt_vopros">ПОДРОБНАЯ ИНСТРУКЦИЯ ЗДЕСЬ</a></span> </div>
+                </div>
+                -->
+                <!-- <div class="block_label_osn">
+                   
+                  
+                    
+                </div> -->
+                <div class="osn_block_chat">
+                    <div id="block_GPT_text">
+                        <div class="title_qust">
+                            <img src="img/new/ava.png" alt="Assistant Avatar" class="assistant-message-img">
+                            <div>
+                                <div class="title_qust-title">Эйнштейн<span class="title_qust-date">21:05</span></div>
+                                <div id="typing-text"></div>
+                            </div>
+
+
+                        </div> 
+                    </div>
+                    <!-- Блок для вывода истории чата -->
+                    <div id="gpt" class="chat_history"></div>
+                    <div id="solvetask" class="chat_history"></div>
+                    <div id="generateessay" class="chat_history"></div>
+                    <div id="generatesummary" class="chat_history"></div>
+                        <!-- Здесь будет формироваться переписка: 
+                            - Сообщения пользователя
+                            - Ответы от "ассистента" (сервера)
+                        -->
+                            
+                        <!-- Основная форма: будет использоваться для всех режимов -->
+                        <div id="block_zadach_text" class="model-block" style="display: none;">
+                            <div class="title_qust">
+                                <h3>Что нужно для качественного решения задачи или теста?</h3>
+                            </div>
+                            <div class="flex_block">
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/zadacha1.png" alt=""></span>
+                                        <div class="text_title_item">Исходный текст</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Уточняйте сокращения (например, “р/с” уточняйте как “равносторонний треугольник”) перед тем, как дать задачу
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/zadacha2.png" alt=""></span>
+                                        <div class="text_title_item">Уровень детализации:</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Включайте пояснения к задачам, чтобы минимизировать ошибки интерпретации (например, “P — это периметр, а не радиус”
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/zadacha3.png" alt=""></span>
+                                        <div class="text_title_item">Файлы</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Старайтесь присылать файл с четким текстом, избегайте загрузки рукописных текстов
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/zadacha4.png" alt=""></span>
+                                        <div class="text_title_item">Язык</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Пишите латиницу только английскими буквами, а кириллицу — русскими, не смешивая
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                         <div id="block_soch_text" class="model-block" style="display: none;">
+                            <div class="title_qust">
+                                <h3>Что нужно для качественного сочинения?</h3>
+                            </div>
+                            <div class="flex_block">
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch1.png" alt=""></span>
+                                        <div class="text_title_item">Тема</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Какова основная тема или заголовок вашего сочинения?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch2.png" alt=""></span>
+                                        <div class="text_title_item">План</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Есть ли у вас предпочтительная структура или основные пункты, которые вы хотите включить?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch3.png" alt=""></span>
+                                        <div class="text_title_item">Ключевые слова</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Какие ключевые моменты или концепции вы хотите осветить?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch4.png" alt=""></span>
+                                        <div class="text_title_item">Жанр</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Какой жанр сочинения вы предпочитаете (рассуждение, описание, повествование и др.)?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch5.png" alt=""></span>
+                                        <div class="text_title_item">Стиль письма</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Какой стиль письма вы желаете (официальный, неофициальный, художественный и т.д.)?
+                                    </div>
+                                </div>
+                            <!--
+                                // удалено раньше
+                                 <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch6.svg" alt=""></span>
+                                        <div class="text_title_item">Объем</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Какой желаемый объем сочинения (количество слов или страниц)?
+                                    </div>
+                                </div> 
+                                // удалено раньше
+                            -->
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/soch6.png" alt=""></span>
+                                        <div class="text_title_item">Уровень сложности</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Для какого класса или уровня образования предназначено сочинение?
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- для конспекта -->
+                        <div id="block_konsp_text" class="model-block" style="display: none;">
+                            <div class="title_qust">
+                                <h3>Что нужно для качественного конспекта?</h3>
+                            </div>
+                            <div class="flex_block">
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect1.png" alt=""></span>
+                                        <div class="text_title_item">Исходный текст</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Загрузите документ или вставьте текст, который необходимо конспектировать
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect2.png" alt=""></span>
+                                        <div class="text_title_item">Уровень детализации:</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Насколько подробным должен быть конспект?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect3.png" alt=""></span>
+                                        <div class="text_title_item">Формат конспекта</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Предпочитаете ли вы определенный формат (тезисы, схемы, таблицы)?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect4.png" alt=""></span>
+                                        <div class="text_title_item">Уровень сложности</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Для какого класса или уровня образования предназначен конспект?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect5.png" alt=""></span>
+                                        <div class="text_title_item">Цель конспекта</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Для чего вы планируете использовать конспект (подготовка к экзамену, быстрое повторение и т.д.)?
+                                    </div>
+                                </div>
+                                <div class="item_vozm text_block_flex">
+                                    <div class="title_vozm_item">
+                                        <span><img src="img/konspect6.png" alt=""></span>
+                                        <div class="text_title_item">Ключевые моменты</div>
+                                    </div>
+                                    <div class="text_item_vozm">
+                                        Есть ли определенные аспекты, на которых следует сделать акцент?
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    <form id="chat-form">
+                        <!-- Для GPT и общего ввода (по умолчанию) -->
+                        <div id="block_GPT" class="model-block" style="display: block;">
+                        <div class="textarea-wrapper">
+                            <textarea id="user-input-gpt" placeholder="Например: что такое законы Ньютона?"></textarea>
+                        </div>
+                        </div>
+
+                        <!-- Для "Решить задачу" (solve-task): текст + возможность прикрепить изображение -->
+                        <div id="block_zadach" class="model-block" style="display: none;">
+                            <div class="textarea-wrapper">
+                                <textarea id="task-text" placeholder="Например: реши уравнение 3x + 2 = 5"></textarea>
+    
+                                    <!-- Лейбл со скрепкой и иконкой -->
+                                    <label for="task-file" class="attach-label">
+                                    <!-- Скрепка (основная иконка) -->
+                                    <img
+                                        id="attach-icon-task"
+                                        src="img/new/skrepka.png"
+                                        alt="Прикрепить файл"
+                                        class="attach-icon"
+                                    />
+                                    <!-- Иконка «файл выбран» (изначально скрыта) -->
+                                    </label>
+                                <div class="file-loaded-icon uploaded-files"
+                                     id="file-loaded-icon_task"   style="display: none;">
+                                    <img
+                                            src="img/new/screen.png"
+                                            alt="Файл(ы) загружен(ы)"
+                                    />
+                                    <span>Скриншот-25-02-11-46.png</span>
+                                    <button class="remove-file">
+                                        <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="1.39844" width="29" height="29" rx="7.5" stroke="#F85555"/>
+                                            <path d="M11.1234 19.0937L18.1945 12.0226L18.8766 12.7047L11.8055 19.7757L11.1234 19.0937ZM11.1208 12.7073L11.8081 12.02L18.8792 19.0911L18.1919 19.7784L11.1208 12.7073Z" fill="#F85555"/>
+                                        </svg>
+
+                                    </button>
+                                </div>
+                                    
+                                    <!-- Скрытый input для выбора изображения -->
+                                    <input
+                                    type="file"
+                                    id="task-file"
+                                    style="display: none;"
+                                    accept="image/*"
+                                    />
+                                </div>
+                        </div>
+
+                        <!-- Для "Написать сочинение" (generate-essay): тема (topic) + стиль + кол-во символов -->
+                        <div id="block_soch" class="model-block" style="display: none;">
+                            <div class="textarea-wrapper">
+                                <textarea type="text" id="essay-topic" placeholder="Например: напиши рассказ про летние каникулы" ></textarea>
+                            </div>
+                            <!-- <div class="textarea-wrapper esse">
+                                <input type="text" id="essay-style" placeholder="Желаемый стиль" />
+                                <input type="number" id="essay-volume" placeholder="Объём (число символов)" />
+                            </div> -->
+                        </div>
+
+                        <!-- Для "Написать конспект" (generate-summary): текст + возможность прикрепить файл -->
+                        <div id="block_konsp" class="model-block" style="display: none;">
+                            <div class="textarea-wrapper">
+                                <textarea id="summary-text" placeholder="Например: сделай краткий пересказ книги “Война и мир”"></textarea>
+                                <!-- Иконка-скрепка (как «кнопка» для выбора файла) -->
+                                <label for="summary-file" class="attach-label">
+                                    <img
+                                    src="img/new/skrepka.png"
+                                    alt="Прикрепить файл"
+                                    class="attach-icon"
+                                    id="attach-icon-summary"
+                                    />
+
+
+                                </label>
+                                <div class="file-loaded-icon uploaded-files"
+                                     id="file-loaded-icon"   style="display: none;">
+                                    <img
+                                            src="img/new/screen.png"
+                                            alt="Файл(ы) загружен(ы)"
+                                    />
+                                    <span>Скриншот-25-02-11-46.png</span>
+                                    <button class="remove-file">
+                                        <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="1.39844" width="29" height="29" rx="7.5" stroke="#F85555"/>
+                                            <path d="M11.1234 19.0937L18.1945 12.0226L18.8766 12.7047L11.8055 19.7757L11.1234 19.0937ZM11.1208 12.7073L11.8081 12.02L18.8792 19.0911L18.1919 19.7784L11.1208 12.7073Z" fill="#F85555"/>
+                                        </svg>
+
+                                    </button>
+                                </div>
+                                <input
+                                    type="file"
+                                    id="summary-file"
+                                    style="display: none;"
+                                    />
+                            </div>
+                        </div>
+
+                        <!-- Кнопка отправки (одна на все режимы) -->
+                        <button type="submit" class="textarea-button">
+                            <img src="img/new/send.svg" alt="Отправить" />
+                        </button>
+                    </form>
+                    <div class="block_button">
+                        <div class="button_item " id="btnSolveTask">
+                            <img src="img/new/chat1.svg" alt="">
+                            <div class="text_butt">Решить задачу</div>
+                        </div>
+                        <div class="button_item" id="btnEssay">
+                            <img src="img/new/chat2.svg" alt="">
+                            <div class="text_butt">Написать сочинение</div>
+                        </div>
+                        <div class="button_item" id="btnSummary">
+                            <img src="img/new/chat3.svg" alt="">
+                            <div class="text_butt">Написать конспект</div>
+                        </div>
+                        <div class="button_item active" id="btnGPT">
+                            <img src="img/new/gbt.svg" alt="">
+                            <div class="text_butt">GPT для всех</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="chat_footer">
+                    <a href="#" class="error-btn" id="openModalBtn">
+                        Сообщить об ошибке
+                        <span><img src="img/Vector_1.svg" alt=""></span>
+                      </a>
+                    <div class="foot">ChatGPT может допускать ошибки. Рекомендуем проверять важную информацию</div>
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно (скрытое по умолчанию) -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h2>Сообщить об ошибке</h2>
+      <form id="errorForm" action="send_error.php" method="post" enctype="multipart/form-data">
+        <div class="form-field">
+          <label for="message">Загрузите скриншот с описанием ошибки:</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
+        <div class="form-field">
+          <label class="dot" for="file">Прикрепить файл</label>
+          <label for="task-file_error" class="attach-label">
+            <!-- Скрепка (основная иконка) -->
+            <img src="img/new/skrepka.png" alt="Прикрепить файл" class="attach-icon_error">
+            <!-- Иконка «файл выбран» (изначально скрыта) -->
+            </label>
+          <input type="file" name="file" id="task-file_error" style="display: none;"/>
+        </div>
+        <button type="submit" class="submit-btn">Отправить сообщение</button>
+      </form>
+      <div id="formResponse" class="result-message"></div>
+    </div>
+  </div>
+  <script>
+    // Открытие и закрытие модального окна
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    openModalBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      modalOverlay.style.display = 'block';
+    });
+
+    closeModalBtn.addEventListener('click', function () {
+      modalOverlay.style.display = 'none';
+      clearForm();
+    });
+
+    // Закрытие по клику на подложку
+    window.addEventListener('click', function (event) {
+      if (event.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+        clearForm();
+      }
+    });
+
+    // Функция для очистки формы и сообщения при закрытии
+    function clearForm() {
+      document.getElementById('errorForm').reset();
+      document.getElementById('formResponse').style.display = 'none';
+      document.getElementById('formResponse').innerHTML = '';
+    }
+
+    // Обработка отправки формы через AJAX
+    const errorForm = document.getElementById('errorForm');
+    errorForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // отменяем стандартную отправку
+
+      const formData = new FormData(errorForm);
+      fetch('send_error.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Выводим результат в formResponse
+        const formResponse = document.getElementById('formResponse');
+        formResponse.style.display = 'block';
+        formResponse.innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+        const formResponse = document.getElementById('formResponse');
+        formResponse.style.display = 'block';
+        formResponse.innerHTML = 'Произошла ошибка при отправке. Попробуйте позже.';
+      });
+    });
+  </script>
+        <div class="bacground_1">
+
+        </div>
+        <div id="gpt_vozm">
+            <div class="left_vozm">
+                <div class="highlighted-text">
+                    Используйте все возможности
+                    <div class="highlight-wrapper">
+<!--                        <span class="highlight">Наука GPT</span>-->
+                    </div>
+                    <p>Откройте для себя новые возможности Эйнштейна, который поможет тебе сэкономить время и повысить продуктивность!</p>
+                </div>
+                <div class="img_vozm">
+                    <img src="img/new/features.png" alt="">
+                </div>
+            </div>
+            <div class="right_vozm">
+                <div class="up_item">
+                    <div class="item_vozm">
+                        <div class="title_vozm_item">
+                            <div class="text_title_item">Решение задач и тестов</div>
+                        </div>
+                        <div class="text_item_vozm">
+                            Ищете простое решение для сложных задач, уравнений, примеров с дробями и тестов? Наш ИИ-бот поможет. Просто загрузите снимок домашнего задания из своей тетради, чтобы решить уравнение или задачу по фото в один клик. Сервис выдает ГДЗ для учеников 5, 6, 7, 8, 9, 10 и 11 классов, помогая с математикой, алгеброй, геометрией, физикой и химией. Выполнять домашние задания еще никогда не было так просто!
+                        </div>
+                       <img src="img/new/icon1.svg" alt="">
+                    </div>
+                    <div class="item_vozm">
+                        <div class="title_vozm_item">
+                            <div class="text_title_item">Сочинения</div>
+                        </div>
+                        <div class="text_item_vozm">
+                            Хотите написать сочинение без усилий? Наш ИИ-бот сделает это за вас. Создавайте сочинение онлайн: чат GPT предлагает уникальные идеи и формулировки, которые оценит учитель. С помощью нейросети можно готовиться к ЕГЭ. И что особенно приятно — генератор сочинений по литературе и русскому языку работает бесплатно. Идеальный помощник для учеников и студентов, стремящихся к отличным результатам.
+                        </div>
+                        <img src="img/new/icon2.svg" alt="">
+
+                    </div>
+                </div>
+                <div class="down_item">
+                    <div class="item_vozm">
+                        <div class="title_vozm_item">
+
+                            <div class="text_title_item">Конспекты</div>
+                        </div>
+                        <div class="text_item_vozm">
+                            С нашим ИИ-ботом вы сможете быстро создать краткий конспект урока в удобном формате. Загружайте фото рукописной лекции, документ или просто текст, из которого нужно вычленить самое главное — нейросеть поможет вам структурировать и сократить информацию. Незаменимый инструмент для эффективного обучения и подготовки.
+                        </div>
+                        <img src="img/new/icon3.svg" alt="">
+                    </div>
+                    <div class="item_vozm">
+                        <div class="title_vozm_item">
+                            <div class="text_title_item">Написать текст</div>
+                        </div>
+                        <div class="text_item_vozm">
+                            Наш ИИ-генератор поможет вам написать текст онлайн бесплатно для учебы, работы или творчества. Это может быть рассказ, сценарий, пост для соцсети, шаблон документа, стихи, комплимент или поздравление с Днем учителя. GPT подстроится под любые ваши задачи — быстро, удобно и бесплатно. Идеальное решение для студентов, специалистов из разных сфер и всех, кому нужен качественный текст.
+                        </div>
+                        <img src="img/new/icon4.svg" alt="">
+                    </div>
+                    <div class="item_vozm">
+                        <div class="title_vozm_item">
+                            <div class="text_title_item">Ответы на тесты</div>
+                        </div>
+                        <div class="text_item_vozm">
+                            Ищете быстрые и точные ответы на тесты? Наш ИИ-бот поможет вам решить тест по фото с помощью нейросети. Моментальное GPT решение теста для эффективной подготовки и повышения ваших результатов. Просто загрузите фото, и получите точные ответы на любые вопросы.
+                        </div>
+                        <img src="img/new/icon5.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dev_preim">
+            <div class="dev_left">
+                <h2>Почему стоит выбирать нас?</h2>
+                <p>НаукаGPT — это удобный и доступный помощник для студентов
+                    и школьников. Мы предлагаем помощь без скрытых условий: никаких номеров, никаких платных подписок, никаких ограничений на доступ.
+                    Все работает на русском языке и без необходимости использовать VPN. Просто заходите на сайт и получайте помощь в решении задач, написании сочинений и многом другом — быстро и бесплатно!</p>
+            </div>
+            <div class="dev_right">
+                <img src="img/new/like.png" alt="">
+            </div>
+        </div>
+        <div class="preim">
+            <div class="slider owl-carousel">
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Русский язык</div>
+                </div>
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Бесплатно</div>
+                </div>
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Мгновенные ответы</div>
+                </div>
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Работаем без VPN</div>
+                </div>
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Безлимитный доступ 24/7</div>
+                </div>
+                <div class="slider_item">
+                    <div class="img_item_slider"><img src="img/new/slider-star.svg" alt=""></div>
+                </div>
+                <div class="slider_item">
+                    <div class="text_item_slider">Не нужен номер телефона</div>
+                </div>
+            </div>
+        </div>
+        <div class="bacground_blue">
+            <div id="gpt_vopros">
+                <div class="left_vozm">
+                    <div class="highlight-wrapper-vopros">
+                        <span class="highlight_vopros">Вопросы и ответы</span>
+                        <p class="highlight_vopros-text">НаукаGPT — это бесплатный ИИ-бот для школьников, с помощью которого можно выполнять домашние задания, </p>
+                    </div>
+                    <div class="img_vozm">
+                        <img src="img/new/vopros.png" alt="">
+                    </div>
+                </div>
+                <div class="right_vozm">
+                    <div class="vopros_container">
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Что такое НаукаGPT?
+                                <span class="toggle-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+<rect width="35" height="35" rx="10" fill="#CFDAF5"/>
+<path d="M13 18.4876V17.5156H23V18.4876H13Z" fill="#3E477C"/>
+</svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros" style="padding: 15px 20px 10px; max-height: max-content;">НаукаGPT — это бесплатный ИИ-бот для школьников, с помощью которого можно выполнять домашние задания, готовиться к контрольным и ЕГЭ. Все остальные могут использовать нейросеть для работы, саморазвития и творчества.</div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Какие задачи может выполнять ИИ-бот?
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                НаукаGPT может выполнять разнообразные задачи. Для школьников предусмотрено решение задач и тестов по фото, бот, пишущий сочинения, ИИ для создания конспектов. Все остальные могут с помощью нейросети получать ответы на любые вопросы, создавать тексты и даже целые книги, составлять расписания, запрашивать идеи для вдохновения, расшифровывать рукописный текст и многое другое.
+                            </div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Инструкция по использованию бесплатного chatGPT
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                Работать с нейросетью для учебы НаукаGPT легко — это как общение с голосовым помощником, только в формате переписки:
+                                <ol>
+                                    <li>Внизу под диалоговым окном расположены кнопки режимов (Решить задачу / Написать сочинение / Написать конспект / GPT для всех). Выберите подходящий режим и нажмите соответствующую кнопку.</li>
+                                    <li>Введите в диалоговое окно описание задания для нейросети.</li>
+                                    <li>Нажмите «Отправить» и дождитесь ответа. 	</li>
+                                    <li>Для получения лучшего результата воспользуйтесь подсказками, расположенными над диалоговым окном.</li>
+                                </ol>
+
+                            </div>
+                        </div>
+
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Режим Решить задачу
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                <ol>
+                                    <li>Загрузите фото задачи по математике, физике или другому предмету, кликнув на иконку со скрепкой.</li>
+                                    <li>Либо просто отправьте сообщение с текстовым описанием задачи. Например: «4 + (x-7) = 14. Чему равен x?».</li>
+                                    <li>Получите ответ. Если он неверный, отправьте еще одно сообщение с просьбой исправить ошибку.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Режим Написать сочинение
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                <ol>
+                                    <li>Напишите боту сообщение о том, какое вам нужно сочинение. Например: «напиши сочинение по картине Девятый вал» или «сочинение про маму».</li>
+                                    <li>Для получения лучшего результата следуйте подсказкам и вводите дополнительную информацию. Например: «от лица девочки-ученицы 5 класса, 400 слов, в описательном стиле».</li>
+                                    <li>Также можно запросить у чата план сочинения, попросить его придумать тему и тезисы для сочинения и т. д.</li>
+                                    <li>Получите сочинение в ответном сообщении. Если оно не понравится, напишите в чате еще одно сообщение и укажите, что нужно изменить.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Режим Написать конспект
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                <ol>
+                                    <li>Напишите боту сообщение о том, какой вам нужен конспект. Например: «напиши конспект темы Законы Ньютона».</li>
+                                    <li>Либо загрузите файл с текстом, из которого нужно сделать краткий конспект, кликнув на иконку со скрепкой.</li>
+                                    <li>Для получения лучшего результата следуйте подсказкам и вводите дополнительную информацию. Например: «максимально кратко, только тезисы» или «конспект в форме таблиц».</li>
+                                    <li>Также 	можно написать сообщение боту с просьбой предложить варианты видов конспекта, попросить подобрать лучший вариант для вас.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Режим GPT для всех
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">
+                                В этом режиме можно общаться с чатом и задавать любые вопросы для учебы, творчества, развлечения.
+                                Чтобы начать, введите в диалоговое окно свое сообщение и отправьте.
+                                Примеры запросов:
+                                <ol>
+                                    <li>Как быстро подготовиться к экзамену?</li>
+                                    <li>Предложи идеи для съемки тиктоков.</li>
+                                    <li>Предложи идеи для съемки тиктоков.</li>
+                                    <li>Предложи идеи для съемки тиктоков.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+
+
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Уникальны ли тексты, написанные искусственным интелектом?
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">Да, как и все аналогичные инструменты, НаукаGPT может допускать ошибки. Поэтому рекомендуем перепроверять факты и важную информацию. Однако ИИ-бот постоянно развивается и совершенствуется, чтобы становиться лучше и выдавать более точные ответы.</div>
+                        </div>
+                        <div class="item_voprpos">
+                            <div class="title_item_vopros">Может ли чат-бот допускать ошибки?
+                                <span class="toggle-icon">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+                                    <path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#16C9FA"/>
+                                    <stop offset="1" stop-color="#ED66FF"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                            </div>
+                            <div class="text_item_vopros">Да, как и все аналогичные инструменты, НаукаGPT может допускать ошибки. Поэтому рекомендуем перепроверять факты и важную информацию. Однако ИИ-бот постоянно развивается и совершенствуется, чтобы становиться лучше и выдавать более точные ответы.
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="final_block">
+            <div class="title">
+                <h2>
+                    Что такое чат-ИИ и как он помогает в современном мире
+                </h2>
+            </div>
+            <div class="container_text_final">
+                <div class="text_final">
+                    Добро пожаловать в мир удобного и эффективного обучения с нашей нейросетью для школы! Мы создали сервис, который поможет вам решать задачи, писать сочинения, создавать конспекты и развивать общую эрудицию. Это универсальный ИИ-инструмент, разработанный под потребности школьников, родителей, учителей и всех, кто стремится к саморазвитию и хочет получать нужную информацию быстро и без ограничений.
+                    <br>
+                    Наш чатGPT для школы умеет решать задачи по математике, физике, химии, биологии, информатике и многим другим предметам. Он не только выдает правильный ответ, но и объясняет каждый шаг решения. Также вы можете писать сочинения на заданную тему, формировать конспекты, решать школьные тесты.
+                </div>
+                <div class="text_final">
+                     Загружайте скрины, документы или фото задач, написанных от руки — ИИ для учебы распознает текст и выполнит задание на пять баллов.
+Чтобы максимально упростить процесс работы с чат-ботом, в каждом режиме мы добавили подробные инструкции, которые подскажут, как правильно сформулировать запрос, чтобы получить идеальный ответ.
+<br><br>
+Попробуйте НаукаGPT для учебы, творчества и саморазвития. Решайте задачи, пишите сочинения и целые книги, получайте ответы на любые вопросы! 
+
+                </div>
+            </div>
+        </div>
+        <div class="footer_block">
+            <div class="item_footer"><a href="https://nauka.club/"><img src="img/logo.svg" alt=""></a></div>
+            <div class="item_footer"><a href="#GPT_CHAT">ChatGPT бесплатно на русском</a></div>
+            <div class="item_footer"><a href="#gpt_vozm">Возможности GPT</a></div>
+            <div class="item_footer"><a href="#gpt_vopros">Вопросы и ответы</a></div>
+            <div class="item_footer">
+                <div class="button-container">
+                    <div class="button-text"><a href="https://nauka.club/">Онлайн учебник</a></div>
+                    <div class="button-icon"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- OwlCarousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+//     document.addEventListener('DOMContentLoaded', function () {
+//     const slider = document.querySelector('.slider');
+//     const items = slider.querySelectorAll('.slider_item');
+    
+//     // Дублирование слайдов для бесконечного прокручивания
+//     const cloneItems = () => {
+//         items.forEach(item => {
+//             let cloneStart = item.cloneNode(true);
+//             let cloneEnd = item.cloneNode(true);
+//             slider.appendChild(cloneStart);
+//             slider.insertBefore(cloneEnd, slider.firstChild);
+//         });
+//     };
+
+//     // Инициализация прокрутки
+//     cloneItems();
+// });
+
+
+
+
+    $(document).ready(function () {
+        // Добавьте это перед инициализацией Owl Carousel
+        $('.slider').each(function () {
+            const $slider = $(this);
+
+            // Клонирование элементов
+            $slider.find('.slider_item').each(function () {
+                $(this).clone().addClass('cloned-start').appendTo($slider);
+                // $(this).clone().addClass('cloned-end').prependTo($slider);
+            });
+
+        // Инициализация Owl Carousel
+        $('.slider').owlCarousel({
+            loop: true, // Циклический слайдер
+            margin: 20,
+            nav: false, // Убираем стрелки
+            dots: false, // Убираем точки навигации
+            autoplay: true, // Автопрокрутка
+            autoplayTimeout: 3000, // Время до переключения (3 секунды)
+            autoplayHoverPause: true, // Остановка при наведении
+            autoWidth: true,
+            autoplaySpeed: 800, // Скорость переключения слайдов
+            smartSpeed: 600, // Плавность прокрутки
+
+            startPosition: 1,
+            items: 8,
+            responsive: {
+                0: {
+                    items: 1 // Количество элементов на экране (моб.)
+                },
+                600: {
+                    items: 2 // Количество элементов на экране (табл.)
+                },
+                1000: {
+                    items: 8 // Количество элементов на экране (десктоп)
+                }
+            }
+        });
+    });
+    //////////для работы открывающегося списка 
+
+});
+
+
+//////открывающийся список 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const titles = document.querySelectorAll('.title_item_vopros');
+
+    titles.forEach(title => {
+        title.addEventListener('click', function () {
+            const text = this.nextElementSibling; // Получить соседний блок текста
+            const icon = this.querySelector('.toggle-icon');
+
+            if (text.style.maxHeight) {
+                // Если блок открыт, закрываем его
+                text.style.maxHeight = null;
+                text.style.padding = '0';
+                icon.innerHTML  = `
+         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="35" height="35" rx="10" fill="url(#paint0_linear_419_816)"/>
+<path d="M17.5177 23V13H18.4823V23H17.5177ZM13 18.486V17.514H23V18.486H13Z" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_419_816" x1="3.5" y1="-15.05" x2="38.1036" y2="10.8763" gradientUnits="userSpaceOnUse">
+<stop stop-color="#16C9FA"/>
+<stop offset="1" stop-color="#ED66FF"/>
+</linearGradient>
+</defs>
+</svg>
+`;
+                } else {
+                    // Если блок закрыт, открываем его
+                    text.style.maxHeight = 'max-content';
+                    text.style.padding = '15px 20px 10px ';
+                    icon.innerHTML  = `
+                       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+<rect width="35" height="35" rx="10" fill="#CFDAF5"/>
+<path d="M13 18.4876V17.5156H23V18.4876H13Z" fill="#3E477C"/>
+</svg>
+
+    `;
+            }
+        });
+    });
+});
+/// переключалка в чате 
+
+/*
+document.addEventListener("DOMContentLoaded", () => {
+    // Найти все кнопки и блоки
+    const buttons = document.querySelectorAll('.text_butt');
+    const blocks = {
+        "Решить задачу": document.getElementById("block_zadach"),
+        "Написать сочинение": document.getElementById("block_soch"),
+        "Написать конспект": document.getElementById("block_konsp"),
+        "GPT для всех": document.getElementById("block_GPT")
+    };
+
+    // Функция для скрытия всех блоков и удаления активного класса
+    const hideAllBlocks = () => {
+        Object.values(blocks).forEach(block => block.style.display = 'none');
+        buttons.forEach(button => button.parentElement.classList.remove('active'));
+    };
+
+    // Добавляем обработчик клика на каждую кнопку
+    buttons.forEach(button => {
+        button.parentElement.addEventListener('click', () => {
+            const text = button.textContent.trim(); // Текст кнопки
+
+            if (blocks[text]) { // Проверяем, есть ли блок для этой кнопки
+                hideAllBlocks(); // Скрываем все блоки
+                blocks[text].style.display = 'block'; // Показываем нужный блок
+                button.parentElement.classList.add('active'); // Добавляем активный класс кнопке
+            }
+        });
+    });
+});
+*/
+</script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+  
+    hamburger.addEventListener('click', () => {
+        console.log("Клац")
+      // Переключаем класс .active для меню
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navIcon2 = document.getElementById('nav-icon2');
+    
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('open');
+      });
+    });
+    </script> -->
+<!-- <script src="js/sendzapros2.js"></script> -->
+<!-- <script src="js/sendzapros.js"></script> -->
+<!-- <script src="js/itog.js"></script> -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(51046466, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/51046466" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script src="js/test_zapros.js"></script>
+<!-- <script src="js/otvet.js"></script> -->
+</body>
+</html>
