@@ -644,12 +644,28 @@ btnSummary.addEventListener('click', () => {
 
 // мигание текста 
 const text = "Привет! Я ваш умный помощник Эйнштейн GPT! Сначала выбери задачу, которую хочешь решить - нажав на кнопку под чатом. Затем введи свой вопрос и прикрепи файлы при необходимости и получи ответ!";
+const text_mob = "1.Сначала выбери задачу, которую хочешь решить - нажав на кнопку под чатом. \n 2.Затем введи свой вопрос и прикрепи файлы при необходимости. \n 3. Получай ответы!";
 const typingElement = document.getElementById("typing-text");
 const speed = 30; // Интервал между буквами в миллисекундах (0.5 секунды)
 
 function typeWriter() {
     let i = 0;
+  let currentText = "";
     const interval = setInterval(() => {
+
+      if (window.innerWidth <= 768) {
+
+        if (i < text_mob.length) {
+          currentText += text_mob[i];
+          // typingElement.innerHTML = currentText.replace(/\n/g, "<br>")
+          typingElement.innerHTML += text_mob[i]; // Добавляем по одной букве
+          i++;
+        } else {
+          clearInterval(interval); // Останавливаем интервал, когда текст напечатан
+          typingElement.classList.add("blink"); // Добавляем мигающий курсор
+        }
+      } else{
+
         if (i < text.length) {
             typingElement.textContent += text[i]; // Добавляем по одной букве
             i++;
@@ -657,6 +673,8 @@ function typeWriter() {
             clearInterval(interval); // Останавливаем интервал, когда текст напечатан
             typingElement.classList.add("blink"); // Добавляем мигающий курсор
         }
+
+      }
     }, speed);
 }
 

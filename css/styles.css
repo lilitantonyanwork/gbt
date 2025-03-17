@@ -2051,6 +2051,9 @@ img.question.hover {
   left: 145px;
   cursor: pointer;
 }
+.title_qust-title-mob{
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   nav#nav-menu{
     gap: 30px;
@@ -2206,6 +2209,21 @@ img.question.hover {
   }
   footer{
     min-height: 850px;
+  }
+
+  #typing-text{
+    white-space: pre-wrap;
+  }
+  .title_qust-title{
+    justify-content: flex-start;
+
+  }
+  .title_qust-title-mob{
+    display: flex;
+    margin-left: 5px;
+  }
+  .title_qust-date{
+    margin-left: auto;
   }
 }
 @media screen and (max-width: 600px){
@@ -2447,6 +2465,12 @@ img.question.hover {
   .chat_history{
     max-height: 300px;
     overflow: auto;
+  }
+  .header-content{
+    gap: 0;
+  }
+  .logo img{
+    height: 30px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
