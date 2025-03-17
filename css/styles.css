@@ -922,6 +922,9 @@ footer {
   font-size: 14px;
   line-height: 1.6;
 }
+.msg-block{
+  background: #e4ebff;
+}
 
 .assistant-message {
   display: flex;
@@ -1948,7 +1951,22 @@ img.question.hover {
 .tooltip:hover img.hover {
   display: inline-block;
 }
-
+.osn_block_chat.start .msg-block{
+  max-height: 600px;
+  overflow: auto;
+  height: auto;
+}
+.osn_block_chat.start{
+  animation: moveUp 0.5s ease-in-out forwards;
+}
+@keyframes moveUp {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -280px;
+  }
+}
 @keyframes blink-caret {
   from, to {
     border-color: transparent;
@@ -2225,8 +2243,24 @@ img.question.hover {
   .title_qust-date{
     margin-left: auto;
   }
+  @keyframes moveUp {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: -215px;
+    }
+  }
 }
 @media screen and (max-width: 600px){
+  @keyframes moveUp {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: -185px;
+    }
+  }
   .text_monitor{
     max-width: calc(100% - 40px);
   }
@@ -2451,6 +2485,7 @@ img.question.hover {
   .osn_block_chat.start{
     margin-top: -150px;
     position: relative;
+
   }
   .osn_block_chat.start:before{
     content: '';
@@ -2462,7 +2497,7 @@ img.question.hover {
     opacity: 0.81;
     left: 0;
   }
-  .chat_history{
+  .osn_block_chat.start .msg-block{
     max-height: 300px;
     overflow: auto;
   }
@@ -2472,5 +2507,42 @@ img.question.hover {
   .logo img{
     height: 30px;
   }
+  @keyframes moveUp {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: -150px;
+    }
+  }
+}
+*::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgba(240,244, 252, 0.15);
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: rgba(240,244, 252, 0.15);
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: rgba(240,244, 252, 0.15);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8486B2;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #8486B2;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #8486B2;
 }
 /*# sourceMappingURL=styles.css.map */

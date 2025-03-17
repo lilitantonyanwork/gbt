@@ -70,7 +70,8 @@ taskFileInput.addEventListener('change', (event) => {
 
   if (files && files.length > 0) {
     // Если хотя бы один файл выбран, показываем иконку «файл загружен»
-    fileLoadedIconTask.style.display = 'inline-block';
+    fileLoadedIconTask.style.display = 'flex';
+    taskTextInput.style.paddingBottom = '89px';
     // FILESCREPKATASK.style.display = 'none'
     task_file = true
   } else {
